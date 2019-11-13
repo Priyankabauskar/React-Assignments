@@ -1,0 +1,23 @@
+.Carousel{
+    height: 285px;
+    width: 10000px;
+    position: absolute;
+    left: 0;
+}
+.carouselcontainer{
+    width: 1000px;
+    overflow: hidden;
+    margin: auto;
+    position: relative;
+    height: 330px;
+}
+.leftArrow{
+    position: absolute;
+    top: 140px;
+    left: 369px;
+}
+.rightArrow{
+    position: absolute;
+    left: 1473px;
+    bottom: 490px;
+}

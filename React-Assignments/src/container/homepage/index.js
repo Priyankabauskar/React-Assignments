@@ -1,10 +1,13 @@
 import React from "react";
 import axios from 'axios';
+import Carousel from '../../component/carousel/index';
 
 class Homepage extends React.Component {
     constructor(props) {
         super(props);
-        this.getProductDetails();
+        this.state={
+          products : []
+        }
     }
     getProductDetails =() =>{
         axios({
@@ -18,7 +21,10 @@ class Homepage extends React.Component {
         }}
           })
           .then(response => {
-            console.log("success",response);
+            this.setState({
+                products: response.data.response.records
+              })
+               console.log(this.state.products)
           })
           .catch(response =>  {
             console.log(response);
@@ -28,9 +34,12 @@ class Homepage extends React.Component {
     render() {
       return (
         <div className="Homepage">
-            <h1>Hello</h1>
+            <Carousel products = {this.state.products} />
         </div>
       );
+    }
+    componentDidMount(){
+      this.getProductDetails();
     }
   }
   export default Homepage;

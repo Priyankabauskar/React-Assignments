@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
-import Login from './login/login';
-import Carousel from './carousel/index';
-import Homepage from './homepage/index';
+import Login from './component/login/login';
+import Homepage from './container/homepage/index';
+
 
 
 class App extends React.Component {
