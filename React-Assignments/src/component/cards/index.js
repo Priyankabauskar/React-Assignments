@@ -1,5 +1,5 @@
 import React from "react";
-import './index.css';
+import './index.scss';
 
 
 class Cards extends React.Component {
@@ -13,7 +13,7 @@ class Cards extends React.Component {
         <div className="Cards">
             <div className="container">
                <img src={this.props.product.compositeProducts[0].EProductMedia.smallURI} />
-                <h4><b>{this.props.product.sfdcName}</b></h4> 
+                <div className="description"><h4><b>{this.props.product.sfdcName}</b></h4> </div> 
                 <p>{this.props.product.compositeProducts[0].priceEntry.listPrice}</p> 
                 <button type="submit" className="addcart">Add To Cart </button>
             </div>

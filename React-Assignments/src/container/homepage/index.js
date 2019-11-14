@@ -7,8 +7,15 @@ class Homepage extends React.Component {
         super(props);
         this.state={
           products : []
-        }
+
+        };
     }
+
+    componentDidMount() {
+      this.getProductDetails();
+      
+   }
+
     getProductDetails =() =>{
         axios({
           method: 'get',
@@ -23,14 +30,14 @@ class Homepage extends React.Component {
           .then(response => {
             this.setState({
                 products: response.data.response.records
-              })
-               console.log(this.state.products)
+              });
           })
           .catch(response =>  {
             console.log(response);
           });
           
-        } 
+        }
+
     render() {
       return (
         <div className="Homepage">
@@ -38,9 +45,8 @@ class Homepage extends React.Component {
         </div>
       );
     }
-    componentDidMount(){
-      this.getProductDetails();
-    }
+
+
   }
   export default Homepage;
   
